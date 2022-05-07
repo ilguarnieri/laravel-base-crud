@@ -1,1 +1,22 @@
-//
+a{
+    color: currentColor;
+    text-decoration: none !important;
+}
+
+.welcome-wrapper{
+    height: calc(100vh - 100px);
+
+    .welcome-title{
+        font-size: max(50px, 8vw);
+        cursor: pointer;
+        transition: all 250ms linear;
+
+        &:hover{
+            color: blue;
+        }
+    }
+
+    .welcome-subtitle{
+        font-size: max(20px, 3vw);
+    }
+}

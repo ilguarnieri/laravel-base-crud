@@ -1,14 +1,22 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ route('comics.index') }}">BackComics</a>
+        <a class="navbar-brand" href="{{ route('homepage') }}">BackComics</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
               
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ route('comics.index') }}">Home <span class="sr-only">(current)</span></a>
+            <li class="{{ Request::route()->getName() == 'homepage' ? 'nav-item active' : 'nav-item' }}">
+              <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+            </li>
+
+            <li class="{{ Request::route()->getName() == 'comics.index' ? 'nav-item active' : 'nav-item' }}">
+              <a class="nav-link" href="{{ route('comics.index') }}">Lista Comics</a>
+            </li>
+
+            <li class="{{ Request::route()->getName() == 'comics.create' ? 'nav-item active' : 'nav-item' }}">
+              <a class="nav-link" href="{{ route('comics.create') }}">Crea Comic</a>
             </li>
     
           </ul>

@@ -1,0 +1,23 @@
+a {
+  color: currentColor;
+  text-decoration: none !important;
+}
+
+.welcome-wrapper {
+  height: calc(100vh - 100px);
+}
+
+.welcome-wrapper .welcome-title {
+  font-size: max(50px, 8vw);
+  cursor: pointer;
+  transition: all 250ms linear;
+}
+
+.welcome-wrapper .welcome-title:hover {
+  color: blue;
+}
+
+.welcome-wrapper .welcome-subtitle {
+  font-size: max(20px, 3vw);
+}
+
