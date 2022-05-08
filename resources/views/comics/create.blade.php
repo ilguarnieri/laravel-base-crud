@@ -7,6 +7,8 @@
 <div class="container pt-5">
 
     <form action="{{ route('comics.store') }}" method="POST">
+        @csrf
+
         <div class="form-group">
             <label for="title">Titolo</label>
             <input type="text" class="form-control" name="title" id="title" placeholder="Inserisci il titolo">
@@ -46,7 +48,7 @@
             <textarea class="form-control" name="description" id="description" rows="6"></textarea>
         </div>
 
-        <a href="#"><button type="button" class="btn btn-secondary btn-lg">Crea Comic</button></a>
+        <button type="submit" class="btn btn-secondary btn-lg">Crea Comic</button>
     </form>    
 </div>
     
