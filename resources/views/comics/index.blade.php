@@ -25,7 +25,17 @@
           <td>{{ $comic->price }}</td>
           <td>
             <a href="{{ route('comics.show', $comic->id) }}">
-              <button type="button" class="btn btn-primary btn-sm">Visualizza</button>
+              <button type="button" class="btn btn-outline-success btn-sm">Visualizza</button>
+            </a>
+          </td>
+          <td>
+            <a href="{{ route('comics.edit', $comic->id) }}">
+              <button type="button" class="btn btn-outline-primary btn-sm">Modifica</button>
+            </a>
+          </td>
+          <td>
+            <a href="{{ route('comics.destroy', $comic->id) }}">
+              <button type="button" class="btn btn-outline-secondary btn-sm">Elimina</button>
             </a>
           </td>
         </tr>            

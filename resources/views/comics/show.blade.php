@@ -12,10 +12,22 @@
         <img src="{{ $comic->thumb }}" alt="thumb">
         <div class="col-9">
             <p>{{ $comic->description }}</p>
-            <h3 class="pt-4">${{ $comic->price }}</h3>
-            <h6>{{ $comic->sale_date }}</h6>
-        </div>
+            <h3 class="pt-4"><strong>${{ $comic->price }}</strong></h3>
+            <h6><strong>{{ $comic->sale_date }}</strong></h6>
 
+            <div>
+                <a href="{{ route('comics.edit', $comic->id) }}">
+                    <button type="button" class="btn btn-outline-primary btn-sm">Modifica</button>
+                </a>
+                <a href="{{ route('comics.destroy', $comic->id) }}">
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Elimina</button>
+                </a>
+            </div>
+
+            <a href="{{ URL::route('comics.index') }}">
+                <h5 class="mt-4"><- Torna alla lista</h5>
+            </a>
+        </div>
     </div>
 </div>
 
