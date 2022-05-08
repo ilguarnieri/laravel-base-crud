@@ -1,22 +1,8 @@
-a{
-    color: currentColor;
-    text-decoration: none !important;
-}
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-.welcome-wrapper{
-    height: calc(100vh - 100px);
+// Variables
+@import 'variables';
 
-    .welcome-title{
-        font-size: max(50px, 8vw);
-        cursor: pointer;
-        transition: all 250ms linear;
-
-        &:hover{
-            color: blue;
-        }
-    }
-
-    .welcome-subtitle{
-        font-size: max(20px, 3vw);
-    }
-}
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

@@ -24,7 +24,9 @@
           <td>{{ $comic->type }}</td>
           <td>{{ $comic->price }}</td>
           <td>
-            <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Visualizza</a>
+            <a href="{{ route('comics.show', $comic->id) }}">
+              <button type="button" class="btn btn-primary btn-sm">Visualizza</button>
+            </a>
           </td>
         </tr>            
         @endforeach
