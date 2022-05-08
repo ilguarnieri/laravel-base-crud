@@ -9,19 +9,28 @@
     <h5 class="text-center">{{ $comic->series }}</h5>
 
     <div class="comic-info d-flex justify-content-between p-3 pt-5">
-        <img src="{{ $comic->thumb }}" alt="thumb">
+
+        <figure class="d-none d-sm-block mr-3 col-3">            
+            <img class="mw-100"src="{{ $comic->thumb }}" alt="thumb">
+        </figure>       
+
         <div class="col-9">
             <p>{{ $comic->description }}</p>
             <h3 class="pt-4"><strong>${{ $comic->price }}</strong></h3>
             <h6><strong>{{ $comic->sale_date }}</strong></h6>
 
-            <div>
-                <a href="{{ route('comics.edit', $comic->id) }}">
+            <div class="d-flex">
+                <a class="mr-2" href="{{ route('comics.edit', $comic->id) }}">
                     <button type="button" class="btn btn-outline-primary btn-sm">Modifica</button>
                 </a>
-                <a href="{{ route('comics.destroy', $comic->id) }}">
-                    <button type="button" class="btn btn-outline-secondary btn-sm">Elimina</button>
-                </a>
+                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+      
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">
+                      Elimina
+                    </button>
+                </form>
             </div>
 
             <a href="{{ URL::route('comics.index') }}">

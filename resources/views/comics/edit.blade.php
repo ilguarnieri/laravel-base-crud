@@ -5,10 +5,10 @@
 @section('mainContent')
 
 <div class="container pt-5 d-flex">
-    
-    <figure class="d-none d-sm-block mr-3">
-        <img src="{{ $comic->thumb }}" alt="thumb">
-    </figure>
+
+    <figure class="d-none d-sm-block mr-3 col-3">            
+        <img class="mw-100"src="{{ $comic->thumb }}" alt="thumb">
+    </figure>   
 
     <div class="flex-grow-1">
         <form action="{{ route('comics.update', $comic) }}" method="POST">

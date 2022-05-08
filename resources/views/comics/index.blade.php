@@ -34,9 +34,14 @@
             </a>
           </td>
           <td>
-            <a href="{{ route('comics.destroy', $comic->id) }}">
-              <button type="button" class="btn btn-outline-secondary btn-sm">Elimina</button>
-            </a>
+            <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+              @csrf
+              @method('DELETE')
+
+              <button type="submit" class="btn btn-outline-secondary btn-sm">
+                Elimina
+              </button>
+            </form>
           </td>
         </tr>            
         @endforeach
