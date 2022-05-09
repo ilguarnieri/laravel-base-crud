@@ -96,11 +96,11 @@ class ComicController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|max:100',
+            'title' => 'required|min:3|max:100',
             'description' => 'nullable',
             'thumb' => 'nullable|url',
-            'price' => 'required|numeric|between:0,999.99',
-            'series' => 'required|max:50',
+            'price' => 'required|numeric|between:1,999.99',
+            'series' => 'required|min:3|max:50',
             'sale_date' => 'required|date_format:Y-m-d',
             'type' => [
                 'required',

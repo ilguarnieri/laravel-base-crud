@@ -24,36 +24,97 @@
     
             <div class="form-group">
                 <label for="title">Titolo</label>
-                <input type="text" class="form-control" name="title" id="title" value="{{ $comic->title }}" placeholder="Inserisci il titolo">
+                <input type="text" class="form-control" name="title" id="title"
+                @error('title')
+                value="{{ $comic->title }}"
+                @enderror
+                value="{{ old('title') ?: $comic->title }}" placeholder="Inserisci il titolo">
+
+                @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
     
             <div class="form-group">
                 <label for="series">Serie</label>
-                <input type="text" class="form-control" name="series" id="series" value="{{ $comic->series }}" placeholder="Inserisci il nome della serie">
+                <input type="text" class="form-control" name="series" id="series"
+                @error('series')
+                value="{{ $comic->series }}"
+                @enderror
+                value="{{ old('series') ?: $comic->series }}" placeholder="Inserisci il nome della serie">
+
+                @error('series')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
     
             <div class="form-group">
                 <label for="type">Genere</label>
                 <select class="form-control" name="type" id="type">
                     <option value="">- - Seleziona - -</option>
-                    <option value="comic book" {{ $comic->type == 'comic book' ? 'selected' : '' }}>Comic Book</option>
-                    <option value="graphic novel" {{ $comic->type == 'graphic novel' ? 'selected' : '' }}>Graphic Novel</option>
+
+                    <option value="comic book"
+                        @error('type')
+                        {{ $comic->type == 'comic book' ? 'selected' : '' }}
+                        @enderror
+
+                        {{ old('type') ? (old('type') == 'comic book' ? 'selected' : '') : ($comic->type == 'comic book' ? 'selected' : '')}}>
+                        Comic Book
+                    </option>
+
+                    <option value="graphic novel"
+                        @error('type')
+                        {{ $comic->type == 'graphic novel' ? 'selected' : '' }}
+                        @enderror
+
+                        {{ old('type') ? (old('type') == 'graphic novel' ? 'selected' : '') : ($comic->type == 'graphic novel' ? 'selected' : '')}}>
+                        Graphic Novel
+                    </option>
+
                 </select>
+
+                @error('type')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
     
             <div class="form-group">
                 <label for="thumb">Link immagine</label>
-                <input type="text" class="form-control" name="thumb" id="thumb" value="{{ $comic->thumb }}" placeholder="Inserisci il link della thumb">
+                <input type="text" class="form-control" name="thumb" id="thumb"
+                @error('thumb')
+                value="{{ $comic->thumb }}"
+                @enderror
+                value="{{ old('thumb') ?: $comic->thumb }}" placeholder="Inserisci il link della thumb">
+
+                @error('thumb')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
     
             <div class="form-group">
                 <label for="sale_date">Data di vendita</label>
-                <input type="text" class="form-control" name="sale_date" id="sale_date" value="{{ $comic->sale_date }}" placeholder="Inserisci la data di vendita">
+                <input type="text" class="form-control" name="sale_date" id="sale_date"
+                @error('sale_date')
+                value="{{ $comic->sale_date }}"
+                @enderror
+                value="{{ old('sale_date') ?: $comic->sale_date }}" placeholder="Inserisci la data di vendita">
+
+                @error('sale_date')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
     
             <div class="form-group">
                 <label for="price">Prezzo</label>
-                <input type="text" class="form-control" name="price" id="price" value="{{ $comic->price }}" placeholder="Inserisci il costo">
+                <input type="text" class="form-control" name="price" id="price"
+                @error('price')
+                value="{{ $comic->price }}"
+                @enderror
+                value="{{ old('price') ?: $comic->price }}" placeholder="Inserisci il costo">
+
+                @error('price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
     
             <div class="form-group">
