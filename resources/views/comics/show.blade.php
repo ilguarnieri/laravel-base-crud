@@ -30,14 +30,14 @@
                 <a class="mr-2" href="{{ route('comics.edit', $comic->id) }}">
                     <button type="button" class="btn btn-outline-primary btn-sm">Modifica</button>
                 </a>
-                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                <form class="delete-form" action="{{ route('comics.destroy', $comic) }}" method="POST">
                     @csrf
                     @method('DELETE')
       
                     <button type="submit" class="btn btn-outline-secondary btn-sm">
                       Elimina
                     </button>
-                </form>
+                  </form>
             </div>
 
             <a href="{{ URL::route('comics.index') }}">

@@ -37270,6 +37270,19 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var buttons = document.querySelectorAll('.delete-form [type="submit"]');
+buttons.forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    var btn = e.target;
+    var form = btn.closest('.delete-form');
+
+    if (form && confirm('Vuoi eliminare questo Comic?')) {
+      form.submit();
+    }
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

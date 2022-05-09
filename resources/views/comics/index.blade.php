@@ -34,7 +34,7 @@
             </a>
           </td>
           <td>
-            <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+            <form class="delete-form" action="{{ route('comics.destroy', $comic) }}" method="POST">
               @csrf
               @method('DELETE')
 
