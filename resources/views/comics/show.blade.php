@@ -11,7 +11,14 @@
     <div class="comic-info d-flex justify-content-between p-3 pt-5">
 
         <figure class="d-none d-sm-block mr-3 col-3">            
-            <img class="mw-100"src="{{ $comic->thumb }}" alt="thumb">
+            <img class="mw-100"
+            src="
+            @if($comic->thumb)
+            {{ $comic->thumb }}
+            @else
+            {{ asset('img/unknown.jpg') }}
+            @endif"
+            alt="thumb">
         </figure>       
 
         <div class="col-9">
