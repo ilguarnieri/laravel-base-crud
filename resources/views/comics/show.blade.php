@@ -41,7 +41,7 @@
             </div>
 
             <a href="{{ URL::route('comics.index') }}">
-                <h5 class="mt-4"><- Torna alla lista</h5>
+                <h5 class="mt-4 mb-4"><- Torna alla lista</h5>
             </a>
         </div>
     </div>

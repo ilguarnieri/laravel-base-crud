@@ -126,7 +126,7 @@
         </form>
 
         <a href="{{ route('comics.show', $comic) }}">
-            <h5 class="mt-4">Esci dalla modalità modifica</h5>
+            <h5 class="mt-4 mb-4">Esci dalla modalità modifica</h5>
         </a>
     </div>    
 </div>
